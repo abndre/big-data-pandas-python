@@ -1,5 +1,7 @@
 import pandas as pd
 import pdb
+
+print 'carrega dados'
 df = pd.read_csv('gapminder.tsv',sep ='\t')
 #print df.head
 print df.shape
@@ -21,6 +23,13 @@ print df_country.head() #show first five
 
 print ''
 
-print df_countr.tail() #show 5 end
+print df_country.tail() #show 5 end
 
-#pdb.set_trace()
+subset = df[['country', 'continent', 'year']]
+
+print subset.head()
+
+#print position
+#df.loc[0]
+#df.loc[0,1,99]
+pdb.set_trace()
