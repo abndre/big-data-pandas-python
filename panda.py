@@ -1,5 +1,6 @@
 import pandas as pd
 import pdb
+import matplotlib.pyplot as plt
 
 print 'carrega dados'
 df = pd.read_csv('gapminder.tsv',sep ='\t')
@@ -32,4 +33,25 @@ print subset.head()
 #print position
 #df.loc[0]
 #df.loc[0,1,99]
-pdb.set_trace()
+#def.loc
+#or
+#df.iloc[0]
+#select colum
+#df.ix[[0, 99, 999], [0, 3, 5]])
+
+#print(df.groupby('year')['lifeExp'].mean())
+
+
+#df.groupby(['year', 'continent'])[['lifeExp','gdpPercap']].mean()
+
+#df.groupby('continent')['country'].nunique())
+
+global_yearly_life_expectancy = df.groupby('year')['lifeExp'].mean()
+global_yearly_life_expectancy.plot()
+#global_yearly_life_expectancy.show()
+#plt.show()
+
+print(df.groupby('continent')['country'].nunique())
+
+
+#pdb.set_trace()
